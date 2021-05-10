@@ -33,4 +33,5 @@ def api(discord_user_id: str):
     'first_name': target_user['first_name'],
     'last_name': target_user['last_name'],
     'graduation_year': target_user['graduation_year'],
+    'is_faculty': target_user['is_faculty']
   }
