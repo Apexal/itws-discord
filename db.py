@@ -23,6 +23,13 @@ def fetch_user_from_discord_user_id(conn, discord_user_id: str):
         return cursor.fetchone()
 
 
+def fetch_user_from_api_key(conn, api_key: str):
+    with conn.cursor() as cursor:
+        cursor.execute(
+            "SELECT * FROM users WHERE api_key=%s LIMIT 1", (api_key,))
+        return cursor.fetchone()
+
+
 def upsert_user(conn, rcs_id: str, user_dict: Dict):
     with conn.cursor() as cursor:
         # Check if users exists

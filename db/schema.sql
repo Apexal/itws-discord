@@ -114,7 +114,8 @@ CREATE TABLE public.users (
     last_name character varying NOT NULL,
     graduation_year integer,
     discord_user_id character varying,
-    created_at timestamp with time zone DEFAULT now() NOT NULL
+    created_at timestamp with time zone DEFAULT now() NOT NULL,
+    api_key character varying
 );
 
 
@@ -191,4 +192,5 @@ INSERT INTO public.schema_migrations (version) VALUES
     ('20210314032749'),
     ('20210314050306'),
     ('20210314050423'),
-    ('20210314050510');
+    ('20210314050510'),
+    ('20210510233200');
