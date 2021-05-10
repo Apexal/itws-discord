@@ -61,6 +61,7 @@ def add_template_locals():
         'rcs_id': g.rcs_id
     }
 
+import api
 
 @app.route('/admin', methods=['GET', 'POST'])
 @login_required

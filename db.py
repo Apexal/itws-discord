@@ -16,6 +16,12 @@ def fetch_user(conn, rcs_id: str):
             "SELECT * FROM users WHERE rcs_id=%s LIMIT 1", (rcs_id,))
         return cursor.fetchone()
 
+def fetch_user_from_discord_user_id(conn, discord_user_id: str):
+    with conn.cursor() as cursor:
+        cursor.execute(
+            "SELECT * FROM users WHERE discord_user_id=%s LIMIT 1", (discord_user_id,))
+        return cursor.fetchone()
+
 
 def upsert_user(conn, rcs_id: str, user_dict: Dict):
     with conn.cursor() as cursor:
